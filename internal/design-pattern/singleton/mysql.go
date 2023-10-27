@@ -13,6 +13,11 @@ var (
 	once sync.Once
 )
 
+type GetMysqlFunc struct {
+	Name string
+	Func func(string) (*sqlx.DB, error)
+}
+
 // GetMysqlInsOrByLock 懒汉式，通过加锁实现
 func GetMysqlInsOrByLock(dns string) (*sqlx.DB, error) {
 	var err error
