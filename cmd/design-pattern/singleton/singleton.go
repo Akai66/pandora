@@ -2,8 +2,9 @@ package main
 
 import (
 	"fmt"
-	"github.com/Akai66/pandora/internal/design-pattern/singleton"
 	"sync"
+
+	"github.com/Akai66/pandora/internal/design-pattern/singleton"
 )
 
 const pandoraMysqlDns = "root:iam59!z$@tcp(127.0.0.1:3306)/pandora?charset=utf8"
