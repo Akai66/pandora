@@ -1,0 +1,21 @@
+syntax = "proto3";
+
+option go_package="github.com/Akai66/pandora/internal/pb/hello";
+
+package hello;
+
+// The greeting service definition.
+service Greeter {
+  rpc SayHello (HelloRequest) returns (HelloReply) {}
+}
+
+// The request message containing the user's name.
+message HelloRequest {
+  string name = 1;
+}
+
+// The response message containing the greetings
+message HelloReply {
+  string reply = 1;
+}
+
