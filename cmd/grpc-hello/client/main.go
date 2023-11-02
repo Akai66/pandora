@@ -5,6 +5,7 @@ import (
 	"context"
 	pb "github.com/Akai66/pandora/internal/pb/hello"
 	"google.golang.org/grpc"
+	"google.golang.org/grpc/credentials/insecure"
 	"log"
 	"os"
 	"time"
@@ -16,7 +17,7 @@ const (
 )
 
 func main() {
-	conn, err := grpc.Dial(_address, grpc.WithInsecure(), grpc.WithBlock())
+	conn, err := grpc.Dial(_address, grpc.WithTransportCredentials(insecure.NewCredentials()), grpc.WithBlock())
 	if err != nil {
 		log.Fatalf("client: failed to connect: %s\n", err)
 	}
